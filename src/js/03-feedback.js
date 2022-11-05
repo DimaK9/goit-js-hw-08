@@ -1,8 +1,24 @@
 const refs = {
     form: document.querySelector('.feedback-form'),
-    textarea: document.querySelector('.message'),
+    input:document.querySelector('input'),
+    textarea: document.querySelector('textarea'),
 };
-console.log(refs.form);
+console.log(refs);
 
-const x = 5;
-console.log(x);
+refs.form.addEventListener('submit', onFormSubmit);
+refs.input.addEventListener('input', onInputChange);
+refs.textarea.addEventListener('input', onTextareaChange);
+
+function onFormSubmit(evt) {
+
+}
+
+function onInputChange(evt) {
+
+}
+
+function onTextareaChange(evt) {
+const message = evt.currentTarget.value;
+
+localStorage.setItem('feedback-msg', message);
+}
